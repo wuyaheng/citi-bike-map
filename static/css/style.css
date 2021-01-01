@@ -47,3 +47,6 @@ tbody tr td, h3 {
   padding: 0 !important;
 }
 
+table.table tbody tr td:nth-child(odd) {
+  border-right: 0.5px solid lightgrey;
+}
