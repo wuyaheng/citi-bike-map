@@ -31,9 +31,9 @@ lightmap.addTo(map);
 
 // Create an overlays object to add to the layer control
 var overlays = {
-  "Empty Stations": layers.EMPTY,
+  "Healthy Stations": layers.NORMAL,
   "Low Stations": layers.LOW,
-  "Healthy Stations": layers.NORMAL
+  "Empty Stations": layers.EMPTY
 };
 
 // Create a control for our layers, add our overlay layers to it
@@ -82,7 +82,6 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
     var updatedAt = infoRes.last_updated;
     var stationStatus = statusRes.data.stations;
     var stationInfo = infoRes.data.stations;
-
     // Create an object to keep of the number of markers in each layer
     var stationCount = {
       EMPTY: 0,
@@ -98,7 +97,6 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
 
       // Create a new station object with properties of both station objects
       var station = Object.assign({}, stationInfo[i], stationStatus[i]);
-
       // If a station has no bikes available, it's empty
       if (!station.num_bikes_available) {
         stationStatusCode = "EMPTY";
@@ -123,7 +121,7 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
       newMarker.addTo(layers[stationStatusCode]);
 
       // Bind a popup to the marker that will  display on click. This will be rendered as HTML
-      newMarker.bindTooltip(station.name + "<br> Capacity: " + station.capacity + "<br>" + station.num_bikes_available + " Bikes Available");
+      newMarker.bindTooltip(station.name + "<br>" + station.num_bikes_available + " Classic<br>" + station.num_ebikes_available + " Electric");
     }
 
     // Call the updateLegend function, which will... update the legend!
@@ -135,8 +133,8 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
 function updateLegend(time, stationCount) {
   document.querySelector(".legend").innerHTML = [
     "<p>Updated: " + moment.unix(time).format("h:mm:ss A") + "</p>",
-    "<p class='empty'>Empty Stations: " + stationCount.EMPTY + "</p>",
+    "<p class='healthy'>Healthy Stations: " + stationCount.NORMAL + "</p>",
     "<p class='low'>Low Stations: " + stationCount.LOW + "</p>",
-    "<p class='healthy'>Healthy Stations: " + stationCount.NORMAL + "</p>"
+    "<p class='empty'>Empty Stations: " + stationCount.EMPTY + "</p>"
   ].join("");
 }
