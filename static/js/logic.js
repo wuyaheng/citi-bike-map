@@ -123,7 +123,7 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
       // Bind a popup to the marker that will  display on click. This will be rendered as HTML
       newMarker.bindTooltip(
         "<table class='table table-borderless table-sm pb-0 mb-0'><thead><tr><b>" + 
-        station.name + "</b></tr></thead><tbody><tr><td> Classic </td> <td> Electric </td></tr><tr><td>"+ station.num_bikes_available + "</td><td>" + station.num_ebikes_available + "</td></tr></tbody></table>"
+        station.name + "</b></tr></thead><tbody><tr><td><h3>"+ station.num_bikes_available + "</h3></td><td><h3>" + station.num_ebikes_available + "</h3></td></tr><tr><td> Classic </td> <td> Electric </td></tr></tbody></table>"
         );
     }
 

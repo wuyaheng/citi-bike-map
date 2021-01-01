@@ -42,3 +42,8 @@ body,
   text-align: center;   
 }
 
+tbody tr td, h3 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
