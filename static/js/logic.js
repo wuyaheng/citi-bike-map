@@ -134,5 +134,5 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
 
 // Update the legend's innerHTML with the last updated time
 function updateLegend(time) {
-  document.querySelector(".legend").innerHTML = "<p>Updated by " + moment.unix(time).format("h:mm:ss A") + "</p>";
+  document.querySelector(".legend").innerHTML = "<p class='mb-0'>Updated by " + moment.unix(time).format("h:mm:ss A") + "</p>";
 }
