@@ -50,3 +50,7 @@ tbody tr td, h3 {
 table.table tbody tr td:nth-child(odd) {
   border-right: 0.5px solid lightgrey;
 }
+
+.navbar {
+  background-color: #2F9AE6 !important;
+}
