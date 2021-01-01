@@ -37,3 +37,8 @@ body,
 .legend .out-of-order {
   color: #007dff;
 }
+
+.table td {
+  text-align: center;   
+}
+
