@@ -1,7 +1,10 @@
 html,
 body,
 #map-id {
-  height: 90vh;
+  height: calc(100vh - 58px);
+  height: -o-calc(100vh - 58px); /* opera */
+  height: -webkit-calc(100vh - 58px); /* google, safari */
+  height: -moz-calc(100vh - 58px); /* firefox */
   padding: 0;
   margin: 0;
 }
