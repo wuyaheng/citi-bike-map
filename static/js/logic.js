@@ -122,22 +122,17 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
 
       // Bind a popup to the marker that will  display on click. This will be rendered as HTML
       newMarker.bindTooltip(
-        "<table class='table table-borderless table-sm pb-0 mb-0'><thead><tr><b>" + 
-        station.name + "</b></tr></thead><tbody><tr><td><h3>"+ station.num_bikes_available + "</h3></td><td><h3>" + station.num_ebikes_available + "</h3></td></tr><tr><td> Classic </td> <td> Electric </td></tr></tbody></table>"
+        "<table class='table table-borderless table-sm pb-0 mb-0'><thead><tr><h6>" + 
+        station.name + "</h6></tr></thead><tbody><tr><td><h3>"+ station.num_bikes_available + "</h3></td><td><h3>" + station.num_ebikes_available + "</h3></td></tr><tr><td> Classic </td> <td> Electric </td></tr></tbody></table>"
         );
     }
 
     // Call the updateLegend function, which will... update the legend!
-    updateLegend(updatedAt, stationCount);
+    updateLegend(updatedAt);
   });
 });
 
-// Update the legend's innerHTML with the last updated time and station count
-function updateLegend(time, stationCount) {
-  document.querySelector(".legend").innerHTML = [
-    "<p>Updated: " + moment.unix(time).format("h:mm:ss A") + "</p>",
-    "<p class='healthy'>Healthy Stations: " + stationCount.NORMAL + "</p>",
-    "<p class='low'>Low Stations: " + stationCount.LOW + "</p>",
-    "<p class='empty'>Empty Stations: " + stationCount.EMPTY + "</p>"
-  ].join("");
+// Update the legend's innerHTML with the last updated time
+function updateLegend(time) {
+  document.querySelector(".legend").innerHTML = "<p>Updated by " + moment.unix(time).format("h:mm:ss A") + "</p>";
 }
