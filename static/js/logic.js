@@ -82,6 +82,8 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
     var updatedAt = infoRes.last_updated;
     var stationStatus = statusRes.data.stations;
     var stationInfo = infoRes.data.stations;
+    console.log(stationStatus)
+    console.log(stationInfo)
     // Create an object to keep of the number of markers in each layer
     var stationCount = {
       EMPTY: 0,
