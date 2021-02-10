@@ -93,7 +93,8 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
 
     // Initialize a stationStatusCode, which will be used as a key to access the appropriate layers, icons, and station count for layer group
     var stationStatusCode;
-
+    var totalCitiBike = 0;
+    var totalEbike = 0;
     // Loop through the stations (they're the same size and have partially matching data)
     for (var i = 0; i < stationInfo.length; i++) {
 
@@ -106,10 +107,14 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
       // If a station has less than 5 bikes, it's status is low
       else if (station.num_bikes_available < 5) {
         stationStatusCode = "LOW";
+        totalCitiBike += station.num_bikes_available; 
+        totalEbike += station.num_ebikes_available;
       }
       // Otherwise the station is normal
       else {
         stationStatusCode = "NORMAL";
+        totalCitiBike += station.num_bikes_available;
+        totalEbike += station.num_ebikes_available; 
       }
 
       // Update the station count
@@ -129,9 +134,18 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
         );
     }
 
+    console.log(totalCitiBike)
+    console.log(totalEbike)
+
+        // summary card begins
+        var classic = document.getElementById('classic'); 
+        var electric = document.getElementById('electric');
+        classic.innerHTML = new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(totalCitiBike);
+        electric.innerHTML = new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(totalEbike); 
+
+
     // Call the updateLegend function, which will... update the legend!
     updateLegend(updatedAt);
-
 
     // bar chart begins
     var ctx = document.getElementById('myChart').getContext('2d');
@@ -170,7 +184,7 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
         },
         scaleLabel: {
           display: true,
-          labelString: "Station Status (If a station has less than 5 bikes, it's status is low)"
+          labelString: "Station Status (If a station has less than 5 bikes, it's status is LOW)"
         }
         }]
       },

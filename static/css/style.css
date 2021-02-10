@@ -1,15 +1,15 @@
 html,
 body,
 #map-id {
-  height: calc(100vh - 58px);
-  height: -o-calc(100vh - 58px); /* opera */
-  height: -webkit-calc(100vh - 58px); /* google, safari */
-  height: -moz-calc(100vh - 58px); /* firefox */
+  height: calc(100vh - 70px);
+  height: -o-calc(100vh - 70px); /* opera */
+  height: -webkit-calc(100vh - 70px); /* google, safari */
+  height: -moz-calc(100vh - 70px); /* firefox */
   padding: 0;
   margin: 0;
 }
 
-.legend {
+.legend { 
   padding: 10px;
   font-family: Sanchez, serif;
   font-size: 16px;
@@ -91,3 +91,18 @@ table.table tbody tr td:nth-child(odd) {
     opacity: 0;
   }
 } 
+
+.textBox {
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+#classic {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+#electric {
+  font-weight: 700;
+  font-size: 2rem; 
+}
