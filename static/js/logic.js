@@ -125,12 +125,69 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
       // Bind a popup to the marker that will  display on click. This will be rendered as HTML
       newMarker.bindTooltip(
         "<table class='table table-borderless table-sm pb-0 mb-0'><thead><tr><h6>" + 
-        station.name + "</h6></tr></thead><tbody><tr><td><h3>"+ station.num_bikes_available + "</h3></td><td><h3>" + station.num_ebikes_available + "</h3></td></tr><tr><td> Classic </td> <td> Electric </td></tr></tbody></table>"
+        station.name + "</h6></tr></thead><tbody><tr><td><h3>"+ station.num_bikes_available + "</h3></td><td><h3>" + station.num_ebikes_available + "</h3></td></tr><tr><td> <i class='fas fa-bicycle'></i> Classic  </td> <td> Electric <i class='fas fa-bolt'></i> </td></tr></tbody></table>"
         );
     }
 
     // Call the updateLegend function, which will... update the legend!
     updateLegend(updatedAt);
+
+
+    // bar chart begins
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: Object.keys(stationCount),
+        datasets: [{
+            label: "Station Count",
+            backgroundColor: ['#A12F33','#EF9228','#019549'],
+            data: Object.values(stationCount)
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+      maintainAspectRatio: true,
+      responsive: true,
+      title: {
+        display: true,
+        text: 'The Number of Citi Bike Stations by Status'
+    },
+      legend: {
+        display: false
+    },
+      scales: {
+        xAxes: [{
+          ticks: {
+            beginAtZero: true,
+          },            
+          gridLines: {
+            drawOnChartArea: false
+        },
+        scaleLabel: {
+          display: true,
+          labelString: "Station Status (If a station has less than 5 bikes, it's status is low)"
+        }
+        }]
+      },
+      plugins: {
+        datalabels: {
+          anchor: 'end',
+          align: 'top',
+          formatter: Math.round,
+          font: {
+            weight: 'bold'
+          }
+        }
+      }
+    }
+});
+
+
   });
 });
 
@@ -138,3 +195,6 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
 function updateLegend(time) {
   document.querySelector(".legend").innerHTML = "<p class='mb-0'>Updated by " + moment.unix(time).format("h:mm:ss A") + "</p>";
 }
+
+
+
