@@ -92,9 +92,17 @@ table.table tbody tr td:nth-child(odd) {
   }
 } 
 
-.textBox {
+
+.left-textBox {
   border: 1px solid lightgray;
   border-radius: 3px;
+  margin-right: 2px;
+}
+
+.right-textBox {
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  margin-left: 2px;
 }
 
 #classic {
