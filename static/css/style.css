@@ -80,3 +80,7 @@ table.table tbody tr td:nth-child(odd) {
   font-weight: 700;
   font-size: 2rem; 
 }
+
+img {
+  border-radius: 4px;
+}
