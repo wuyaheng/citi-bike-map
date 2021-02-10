@@ -84,3 +84,10 @@ table.table tbody tr td:nth-child(odd) {
 img {
   border-radius: 4px;
 }
+
+.box {
+  display: inline-block;
+  height: 100px;
+  width: 100%; 
+  position: relative;
+}
