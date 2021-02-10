@@ -184,7 +184,7 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
         },
         scaleLabel: {
           display: true,
-          labelString: "Station Status (If a station has less than 5 bikes, it's status is LOW)"
+          labelString: "Station Status (If < 5 bikes, station status is LOW)"
         }
         }]
       },
