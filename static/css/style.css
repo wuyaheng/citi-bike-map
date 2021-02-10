@@ -58,40 +58,6 @@ table.table tbody tr td:nth-child(odd) {
   background-color: #2F9AE6 !important;
 }
 
-.fa-biking {
-  position: absolute;
-  top: 20px;
-  left: 10em;
-  animation-name: drive;
-  animation-duration: 10s;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-@keyframes drive {
-  0% { 
-    transform: translateX(5em);
-    opacity: 0;
-  }
-  10% { 
-    transform: translateX(10em);
-    opacity: 1;
-  }
-  50% { 
-    transform: translateX(30em);
-    opacity: 1;
-  }
-  90% { 
-    transform: translateX(55em);
-    opacity: 1;
-  }
-  100% { 
-    transform: translateX(60em);
-    opacity: 0;
-  }
-} 
-
 
 .left-textBox {
   border: 1px solid lightgray;
@@ -113,8 +79,4 @@ table.table tbody tr td:nth-child(odd) {
 #electric {
   font-weight: 700;
   font-size: 2rem; 
-}
-
-img {
-  border-radius: 5px;
 }
