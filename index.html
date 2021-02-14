@@ -30,15 +30,12 @@
 <body>
 
   <nav class="navbar justify-content-center">
-      <h5 class="navbar-brand text-white p-0 m-0" href="#"><span class="p-2">Citi Bike Station Map - NYC</span>
+      <h5 class="navbar-brand text-white p-0 m-0" href="#"><span class="p-2">Citi Bike Real-Time Availability</span>
       </h5>
   </nav>
 <div class="container-fluid mb-1">
   <div class="row mt-2">
 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-  <div class="row m-0 justify-content-center mb-1">
-    <h5 class="text-center">Find Citi Bike real-time availability</h5>
-  </div>
   <div class="row m-0"> 
 
       <div class="col text-center p-0">
@@ -64,12 +61,21 @@
 </div>
 
 <div class="mt-2 mb-2">
-  <img width="100%" src="https://cdn.glitch.com/17e006a1-9c5d-4fc1-a7f3-e201dd73c425%2Fcitibike.jpg?v=1612988788601"/>
+  <img width="100%" src="https://cdn.glitch.com/17e006a1-9c5d-4fc1-a7f3-e201dd73c425%2FcitiBike_re.jpg?v=1613328620926"/>
+</div>
+
+<button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target=".bd-example-modal-sm">About the Project</button>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content p-4" style="text-align: justify;">
+      The NYC Citi Bike Availability Map is a dashboard that displays all Citi bike stations and their bike availability on a real-time basis. The text box provides a holistic view of the total available classic Citi bikes and electric bikes. The accompanying bar chart shows the number of stations that have empty, low, and normal status. The station has a low status if it has less than 5 bikes and a normal status if it has 5 or more bikes. On the map, users can find the real-time availability of bikes at each station by hovering over the marker. By default, normal, low, and empty stations will all be displayed on the map, but users can choose to only display the stations that have bikes available.
+    </div>
+  </div>
 </div>
 </div>
 
-
-<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
   <div class="card">
   <div id="map-id"></div>
 </div>
@@ -77,12 +83,18 @@
 </div>
 
 </div>
+
+
+
   <!-- D3 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
 
   <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <!-- MomentJS -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
 
@@ -107,10 +119,19 @@
   <!-- Chart js plugin -->
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
 
+  <!-- font awesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
-
+ 
+        
   <!-- Our JavaScript -->
   <script type="text/javascript" src="static/js/logic.js"></script>
+
+<script>
+
+  $(document).ready(function() {
+    $("#MyModal").modal();
+  });
+</script>
 
 </body>
 

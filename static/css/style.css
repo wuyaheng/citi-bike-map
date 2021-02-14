@@ -91,3 +91,14 @@ img {
   width: 100%; 
   position: relative;
 }
+
+
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn {
+  background-color: #2F9AE6 !important;
+  border: none;
+}
