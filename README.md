@@ -20,7 +20,7 @@ The NYC Citi Bike Availability Map is a dashboard that displays all Citi bike st
 Chart.js, JavaScript, HTML, CSS
 
 ## Link
-https://citi-bike-stations-map.netlify.app/
+https://citi-bike-availability-map.netlify.app/
 
 ## Usage
 Hover over the marker to find the real-time availability of bikes at each station
