@@ -54,10 +54,6 @@ table.table tbody tr td:nth-child(odd) {
   border-right: 0.5px solid lightgrey;
 }
 
-.navbar {
-  background-color: #2F9AE6 !important;
-}
-
 
 .left-textBox {
   border: 1px solid lightgray;
@@ -99,6 +95,25 @@ img {
 }
 
 .btn {
-  background-color: #2F9AE6 !important;
+  background-color: #555555 !important;
   border: none;
+  margin-right: 1rem !important;
+}
+
+nav {
+  background-color: #fff !important;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+}
+
+.navbar-brand {
+  color: #555555 !important;
+  margin: 0 auto !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .btn {
+    margin-top: 0.5rem !important;
+    margin-right: 0rem !important;
+  }
 }
