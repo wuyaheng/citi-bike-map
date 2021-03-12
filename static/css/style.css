@@ -1,12 +1,11 @@
 html,
-body,
-#map-id {
-  height: calc(100vh - 70px);
-  height: -o-calc(100vh - 70px); /* opera */
-  height: -webkit-calc(100vh - 70px); /* google, safari */
-  height: -moz-calc(100vh - 70px); /* firefox */
+body {
   padding: 0;
   margin: 0;
+}
+#map-id {
+  height: 550px !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .legend { 
@@ -54,27 +53,14 @@ table.table tbody tr td:nth-child(odd) {
   border-right: 0.5px solid lightgrey;
 }
 
-
-.left-textBox {
-  border: 1px solid lightgray;
-  border-radius: 3px;
-  margin-right: 2px;
-}
-
-.right-textBox {
-  border: 1px solid lightgray;
-  border-radius: 3px;
-  margin-left: 2px;
-}
-
 #classic {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 #electric {
   font-weight: 700;
-  font-size: 2rem; 
+  font-size: 1.5rem; 
 }
 
 img {
@@ -86,6 +72,8 @@ img {
   height: 100px;
   width: 100%; 
   position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
 }
 
 
@@ -108,6 +96,10 @@ nav {
 .navbar-brand {
   color: #555555 !important;
   margin: 0 auto !important;
+}
+
+.image-container {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 
