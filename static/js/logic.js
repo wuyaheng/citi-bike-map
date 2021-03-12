@@ -134,9 +134,6 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
         );
     }
 
-    console.log(totalCitiBike)
-    console.log(totalEbike)
-
         // summary card begins
         var classic = document.getElementById('classic'); 
         var electric = document.getElementById('electric');
@@ -165,7 +162,7 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
 
     // Configuration options go here
     options: {
-      maintainAspectRatio: true,
+      maintainAspectRatio: false,
       responsive: true,
       title: {
         display: true,
@@ -184,7 +181,15 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json", functio
         },
         scaleLabel: {
           display: true,
-          labelString: "Station Status (If < 5 bikes, station status is LOW)"
+          labelString: "Status (If < 5 bikes, station status is LOW)"
+        }
+        }],
+        yAxes: [{
+          ticks: {
+            beginAtZero: true,
+          },            
+          gridLines: {
+            drawOnChartArea: false
         }
         }]
       },

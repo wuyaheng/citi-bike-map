@@ -55,16 +55,16 @@ table.table tbody tr td:nth-child(odd) {
 
 #classic {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 22px;
 }
 
 #electric {
   font-weight: 700;
-  font-size: 1.5rem; 
+  font-size: 22px;
 }
 
 img {
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .box {
@@ -83,9 +83,10 @@ img {
 }
 
 .btn {
-  background-color: #555555 !important;
+  background-color: grey !important;
   border: none;
   margin-right: 1rem !important;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
 }
 
 nav {
@@ -100,6 +101,12 @@ nav {
 
 .image-container {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+canvas {
+  height: 260px !important;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+  border-radius: 3px;
 }
 
 
